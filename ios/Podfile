@@ -1,6 +1,6 @@
 use_frameworks!
 target "RNReactNativeIosLibraryNsr" do
     source 'https://github.com/CocoaPods/Specs.git'
-    platform :ios, '9.0'
-    pod 'AFNetworking', '~> 2.5'
+	platform :ios, '7.0'
+	pod 'AFNetworking', '~> 2.5'
 end
