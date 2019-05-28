@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		658390BF1207541B7CB729DA /* Pods_RNReactNativeIosLibraryNsr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE3B640D5B58DDC6A2EB76A /* Pods_RNReactNativeIosLibraryNsr.framework */; };
 		A9E4434A229D749F00F6EC2D /* NSR.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44331229D749E00F6EC2D /* NSR.m */; };
 		A9E4434C229D749F00F6EC2D /* NSRDefaultSecurityDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */; };
 		A9E4434D229D749F00F6EC2D /* NSRWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44337229D749E00F6EC2D /* NSRWebView.m */; };
@@ -31,6 +32,9 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNReactNativeIosLibraryNsr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReactNativeIosLibraryNsr.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNReactNativeIosLibraryNsr.release.xcconfig"; path = "Target Support Files/Pods-RNReactNativeIosLibraryNsr/Pods-RNReactNativeIosLibraryNsr.release.xcconfig"; sourceTree = "<group>"; };
+		8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNReactNativeIosLibraryNsr.debug.xcconfig"; path = "Target Support Files/Pods-RNReactNativeIosLibraryNsr/Pods-RNReactNativeIosLibraryNsr.debug.xcconfig"; sourceTree = "<group>"; };
+		9FE3B640D5B58DDC6A2EB76A /* Pods_RNReactNativeIosLibraryNsr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNReactNativeIosLibraryNsr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E44331229D749E00F6EC2D /* NSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSR.m; sourceTree = "<group>"; };
 		A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRControllerWebView.h; sourceTree = "<group>"; };
 		A9E44335229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = RNReactNativeIosLibraryNsr.xcworkspace; sourceTree = "<group>"; };
@@ -47,7 +51,7 @@
 		A9E44344229D749F00F6EC2D /* NSRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRUser.m; sourceTree = "<group>"; };
 		A9E44345229D749F00F6EC2D /* NSRSampleWFDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRSampleWFDelegate.m; sourceTree = "<group>"; };
 		A9E44346229D749F00F6EC2D /* nsr_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsr_logo.png; sourceTree = "<group>"; };
-		A9E44347229D749F00F6EC2D /* nsr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = nsr.html; sourceTree = "<group>"; };
+		A9E44347229D749F00F6EC2D /* eventCruncher.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eventCruncher.html; sourceTree = "<group>"; };
 		A9E44348229D749F00F6EC2D /* NSRSampleWFDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRSampleWFDelegate.h; sourceTree = "<group>"; };
 		A9E44349229D749F00F6EC2D /* NSRWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRWebView.h; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNReactNativeIosLibraryNsr.h; sourceTree = "<group>"; };
@@ -59,12 +63,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				658390BF1207541B7CB729DA /* Pods_RNReactNativeIosLibraryNsr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130461D3522354F0A3724BD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FE3B640D5B58DDC6A2EB76A /* Pods_RNReactNativeIosLibraryNsr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +91,7 @@
 			children = (
 				A9E44346229D749F00F6EC2D /* nsr_logo.png */,
 				A9E4433F229D749E00F6EC2D /* NSR.h */,
-				A9E44347229D749F00F6EC2D /* nsr.html */,
+				A9E44347229D749F00F6EC2D /* eventCruncher.html */,
 				A9E44331229D749E00F6EC2D /* NSR.m */,
 				A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */,
 				A9E44342229D749E00F6EC2D /* NSRControllerWebView.m */,
@@ -98,7 +111,18 @@
 				B3E7B5881CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.h */,
 				B3E7B5891CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
+				C6A0A5BFB7D7A1967C3BEA8E /* Pods */,
+				130461D3522354F0A3724BD2 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		C6A0A5BFB7D7A1967C3BEA8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */,
+				328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +132,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNReactNativeIosLibraryNsr" */;
 			buildPhases = (
+				352AB9CEBC27AFBE9AB2D3A4 /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
@@ -152,6 +177,31 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		352AB9CEBC27AFBE9AB2D3A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNReactNativeIosLibraryNsr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -255,6 +305,7 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -271,6 +322,7 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
