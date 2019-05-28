@@ -3,11 +3,11 @@
 
 ## Getting started
 
-`$ npm install react-native-react-native-ios-library-nsr --save`
+`$ npm install react-native-ios-library-nsr --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-react-native-ios-library-nsr`
+`$ react-native link react-native-ios-library-nsr`
 
 ### Manual installation
 
@@ -22,7 +22,7 @@
 
 ## Usage
 ```javascript
-import RNReactNativeIosLibraryNsr from 'react-native-react-native-ios-library-nsr';
+import RNReactNativeIosLibraryNsr from 'react-native-ios-library-nsr';
 
 // TODO: What to do with the module?
 RNReactNativeIosLibraryNsr;
