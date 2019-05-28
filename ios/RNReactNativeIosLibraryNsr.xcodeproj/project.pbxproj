@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		658390BF1207541B7CB729DA /* Pods_RNReactNativeIosLibraryNsr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE3B640D5B58DDC6A2EB76A /* Pods_RNReactNativeIosLibraryNsr.framework */; };
+		A9B3347B229D8D3900959789 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9B33478229D8D2000959789 /* AFNetworking.framework */; };
 		A9E4434A229D749F00F6EC2D /* NSR.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44331229D749E00F6EC2D /* NSR.m */; };
 		A9E4434C229D749F00F6EC2D /* NSRDefaultSecurityDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */; };
 		A9E4434D229D749F00F6EC2D /* NSRWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44337229D749E00F6EC2D /* NSRWebView.m */; };
@@ -17,6 +18,23 @@
 		A9E44353229D749F00F6EC2D /* NSRSampleWFDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44345229D749F00F6EC2D /* NSRSampleWFDelegate.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A9B33477229D8D2000959789 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9B33472229D8D2000959789 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 491B70A98D120722F0A0A0E64E321378;
+			remoteInfo = AFNetworking;
+		};
+		A9B33479229D8D2000959789 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A9B33472229D8D2000959789 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C61C71F9602084EBE3D3CF78AB70B4FC;
+			remoteInfo = "Pods-RNReactNativeIosLibraryNsr";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		58B511D91A9E6C8500147676 /* CopyFiles */ = {
@@ -35,6 +53,7 @@
 		328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNReactNativeIosLibraryNsr.release.xcconfig"; path = "Target Support Files/Pods-RNReactNativeIosLibraryNsr/Pods-RNReactNativeIosLibraryNsr.release.xcconfig"; sourceTree = "<group>"; };
 		8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNReactNativeIosLibraryNsr.debug.xcconfig"; path = "Target Support Files/Pods-RNReactNativeIosLibraryNsr/Pods-RNReactNativeIosLibraryNsr.debug.xcconfig"; sourceTree = "<group>"; };
 		9FE3B640D5B58DDC6A2EB76A /* Pods_RNReactNativeIosLibraryNsr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RNReactNativeIosLibraryNsr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B33472229D8D2000959789 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		A9E44331229D749E00F6EC2D /* NSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSR.m; sourceTree = "<group>"; };
 		A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRControllerWebView.h; sourceTree = "<group>"; };
 		A9E44335229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = RNReactNativeIosLibraryNsr.xcworkspace; sourceTree = "<group>"; };
@@ -63,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9B3347B229D8D3900959789 /* AFNetworking.framework in Frameworks */,
 				658390BF1207541B7CB729DA /* Pods_RNReactNativeIosLibraryNsr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +109,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				A9B33472229D8D2000959789 /* Pods.xcodeproj */,
 				A9E44346229D749F00F6EC2D /* nsr_logo.png */,
 				A9E4433F229D749E00F6EC2D /* NSR.h */,
 				A9E44347229D749F00F6EC2D /* eventCruncher.html */,
@@ -114,6 +135,15 @@
 				C6A0A5BFB7D7A1967C3BEA8E /* Pods */,
 				130461D3522354F0A3724BD2 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		A9B33473229D8D2000959789 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A9B33478229D8D2000959789 /* AFNetworking.framework */,
+				A9B3347A229D8D2000959789 /* Pods_RNReactNativeIosLibraryNsr.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C6A0A5BFB7D7A1967C3BEA8E /* Pods */ = {
@@ -171,12 +201,35 @@
 			mainGroup = 58B511D21A9E6C8500147676;
 			productRefGroup = 58B511D21A9E6C8500147676;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A9B33473229D8D2000959789 /* Products */;
+					ProjectRef = A9B33472229D8D2000959789 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				58B511DA1A9E6C8500147676 /* RNReactNativeIosLibraryNsr */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A9B33478229D8D2000959789 /* AFNetworking.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AFNetworking.framework;
+			remoteRef = A9B33477229D8D2000959789 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A9B3347A229D8D2000959789 /* Pods_RNReactNativeIosLibraryNsr.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_RNReactNativeIosLibraryNsr.framework;
+			remoteRef = A9B33479229D8D2000959789 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		352AB9CEBC27AFBE9AB2D3A4 /* [CP] Check Pods Manifest.lock */ = {

@@ -1,6 +1,5 @@
 
 #import "RNReactNativeIosLibraryNsr.h"
-#import "NSR.h"
 
 @implementation RNReactNativeIosLibraryNsr
 
@@ -11,10 +10,6 @@
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(greetings: (RCTResponseSenderBlock)callback){
-    callback(@[[NSNull null], @"NSR SDK React Native iOS!" ]);
-}
-
-- (void)setup{
     
     if (@available(iOS 10.0, *)) {
         UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
@@ -22,16 +17,15 @@ RCT_EXPORT_METHOD(greetings: (RCTResponseSenderBlock)callback){
         
         UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound;
         [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError* _Nullable error) {}];
-        
     }
     
     @try {
         NSMutableDictionary* settings = [[NSMutableDictionary alloc] init];
         
-        NSString* baseUrl = @"https://sandboxng.neosurancecloud.net/api/v1.0/";
+        NSString* baseUrl = @"https://sbsdk.neosurancecloud.net/api/v1.0/";
         NSString* code = @"bppb";
         NSString* secret_key = @"pass";
-        NSString* dev_mode = YES;
+        NSString* dev_mode = [myarg valueForKey :@"dev_mode"];
         [settings setObject:baseUrl  forKey:@"base_url"];
         [settings setObject:code forKey:@"code"];
         [settings setObject:secret_key forKey:@"secret_key"];
@@ -44,10 +38,10 @@ RCT_EXPORT_METHOD(greetings: (RCTResponseSenderBlock)callback){
         
     }
     @catch (NSException * e) {
-        
+            callback(@[[NSNull null], @"NSR SDK React Native iOS!" ]);
     }
     
+    callback(@[[NSNull null], @"NSR SDK React Native iOS!" ]);
 }
-
 
 @end  

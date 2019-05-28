@@ -4,7 +4,8 @@
 #else
 #import <React/RCTBridgeModule.h>
 #endif
-
+#import "NSR.h"
+#import "NSRSampleWFDelegate.h"
 
 @interface RNReactNativeIosLibraryNsr : NSObject <RCTBridgeModule>
 
