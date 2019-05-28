@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A9E4434A229D749F00F6EC2D /* NSR.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44331229D749E00F6EC2D /* NSR.m */; };
+		A9E4434C229D749F00F6EC2D /* NSRDefaultSecurityDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */; };
+		A9E4434D229D749F00F6EC2D /* NSRWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44337229D749E00F6EC2D /* NSRWebView.m */; };
+		A9E4434F229D749F00F6EC2D /* NSREventWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E4433B229D749E00F6EC2D /* NSREventWebView.m */; };
+		A9E44351229D749F00F6EC2D /* NSRControllerWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44342229D749E00F6EC2D /* NSRControllerWebView.m */; };
+		A9E44352229D749F00F6EC2D /* NSRUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44344229D749F00F6EC2D /* NSRUser.m */; };
+		A9E44353229D749F00F6EC2D /* NSRSampleWFDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44345229D749F00F6EC2D /* NSRSampleWFDelegate.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +31,25 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNReactNativeIosLibraryNsr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReactNativeIosLibraryNsr.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9E44331229D749E00F6EC2D /* NSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSR.m; sourceTree = "<group>"; };
+		A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRControllerWebView.h; sourceTree = "<group>"; };
+		A9E44335229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = RNReactNativeIosLibraryNsr.xcworkspace; sourceTree = "<group>"; };
+		A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRDefaultSecurityDelegate.m; sourceTree = "<group>"; };
+		A9E44337229D749E00F6EC2D /* NSRWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRWebView.m; sourceTree = "<group>"; };
+		A9E44338229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RNReactNativeIosLibraryNsr.podspec; sourceTree = "<group>"; };
+		A9E44339229D749E00F6EC2D /* NSRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRUser.h; sourceTree = "<group>"; };
+		A9E4433B229D749E00F6EC2D /* NSREventWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSREventWebView.m; sourceTree = "<group>"; };
+		A9E4433D229D749E00F6EC2D /* NSRDefaultSecurityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRDefaultSecurityDelegate.h; sourceTree = "<group>"; };
+		A9E4433E229D749E00F6EC2D /* NSREventWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSREventWebView.h; sourceTree = "<group>"; };
+		A9E4433F229D749E00F6EC2D /* NSR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSR.h; sourceTree = "<group>"; };
+		A9E44342229D749E00F6EC2D /* NSRControllerWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRControllerWebView.m; sourceTree = "<group>"; };
+		A9E44343229D749F00F6EC2D /* push.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = push.wav; sourceTree = "<group>"; };
+		A9E44344229D749F00F6EC2D /* NSRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRUser.m; sourceTree = "<group>"; };
+		A9E44345229D749F00F6EC2D /* NSRSampleWFDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRSampleWFDelegate.m; sourceTree = "<group>"; };
+		A9E44346229D749F00F6EC2D /* nsr_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsr_logo.png; sourceTree = "<group>"; };
+		A9E44347229D749F00F6EC2D /* nsr.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = nsr.html; sourceTree = "<group>"; };
+		A9E44348229D749F00F6EC2D /* NSRSampleWFDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRSampleWFDelegate.h; sourceTree = "<group>"; };
+		A9E44349229D749F00F6EC2D /* NSRWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRWebView.h; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNReactNativeIosLibraryNsr.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNReactNativeIosLibraryNsr.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +76,25 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				A9E44346229D749F00F6EC2D /* nsr_logo.png */,
+				A9E4433F229D749E00F6EC2D /* NSR.h */,
+				A9E44347229D749F00F6EC2D /* nsr.html */,
+				A9E44331229D749E00F6EC2D /* NSR.m */,
+				A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */,
+				A9E44342229D749E00F6EC2D /* NSRControllerWebView.m */,
+				A9E4433D229D749E00F6EC2D /* NSRDefaultSecurityDelegate.h */,
+				A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */,
+				A9E4433E229D749E00F6EC2D /* NSREventWebView.h */,
+				A9E4433B229D749E00F6EC2D /* NSREventWebView.m */,
+				A9E44348229D749F00F6EC2D /* NSRSampleWFDelegate.h */,
+				A9E44345229D749F00F6EC2D /* NSRSampleWFDelegate.m */,
+				A9E44339229D749E00F6EC2D /* NSRUser.h */,
+				A9E44344229D749F00F6EC2D /* NSRUser.m */,
+				A9E44349229D749F00F6EC2D /* NSRWebView.h */,
+				A9E44337229D749E00F6EC2D /* NSRWebView.m */,
+				A9E44343229D749F00F6EC2D /* push.wav */,
+				A9E44338229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.podspec */,
+				A9E44335229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.xcworkspace */,
 				B3E7B5881CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.h */,
 				B3E7B5891CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -95,6 +140,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -112,7 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E44351229D749F00F6EC2D /* NSRControllerWebView.m in Sources */,
+				A9E4434F229D749F00F6EC2D /* NSREventWebView.m in Sources */,
+				A9E44353229D749F00F6EC2D /* NSRSampleWFDelegate.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m in Sources */,
+				A9E4434C229D749F00F6EC2D /* NSRDefaultSecurityDelegate.m in Sources */,
+				A9E44352229D749F00F6EC2D /* NSRUser.m in Sources */,
+				A9E4434D229D749F00F6EC2D /* NSRWebView.m in Sources */,
+				A9E4434A229D749F00F6EC2D /* NSR.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +257,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
