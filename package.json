@@ -5,6 +5,8 @@
   "author": "Ale Infu Neosurance",
   "private": false,
   "license": "Unlicense",
+  "description": "react native ios library for nsr sdk",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/neosurance/react-native-ios-library-nsr.git"
