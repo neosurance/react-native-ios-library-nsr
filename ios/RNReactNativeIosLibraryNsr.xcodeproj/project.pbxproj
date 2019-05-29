@@ -41,16 +41,12 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNReactNativeIosLibraryNsr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReactNativeIosLibraryNsr.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNReactNativeIosLibraryNsr.release.xcconfig"; path = "Target Support Files/Pods-RNReactNativeIosLibraryNsr/Pods-RNReactNativeIosLibraryNsr.release.xcconfig"; sourceTree = "<group>"; };
-		8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNReactNativeIosLibraryNsr.debug.xcconfig"; path = "Target Support Files/Pods-RNReactNativeIosLibraryNsr/Pods-RNReactNativeIosLibraryNsr.debug.xcconfig"; sourceTree = "<group>"; };
 		A901074D229E82CB00A3EBE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9010751229E82DA00A3EBE8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A9E44331229D749E00F6EC2D /* NSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSR.m; sourceTree = "<group>"; };
 		A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRControllerWebView.h; sourceTree = "<group>"; };
-		A9E44335229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = RNReactNativeIosLibraryNsr.xcworkspace; sourceTree = "<group>"; };
 		A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRDefaultSecurityDelegate.m; sourceTree = "<group>"; };
 		A9E44337229D749E00F6EC2D /* NSRWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRWebView.m; sourceTree = "<group>"; };
-		A9E44338229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RNReactNativeIosLibraryNsr.podspec; sourceTree = "<group>"; };
 		A9E44339229D749E00F6EC2D /* NSRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRUser.h; sourceTree = "<group>"; };
 		A9E4433B229D749E00F6EC2D /* NSREventWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSREventWebView.m; sourceTree = "<group>"; };
 		A9E4433D229D749E00F6EC2D /* NSRDefaultSecurityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRDefaultSecurityDelegate.h; sourceTree = "<group>"; };
@@ -152,23 +148,11 @@
 				A9E44349229D749F00F6EC2D /* NSRWebView.h */,
 				A9E44337229D749E00F6EC2D /* NSRWebView.m */,
 				A9E44343229D749F00F6EC2D /* push.wav */,
-				A9E44338229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.podspec */,
-				A9E44335229D749E00F6EC2D /* RNReactNativeIosLibraryNsr.xcworkspace */,
 				B3E7B5881CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.h */,
 				B3E7B5891CC2AC0600A0062D /* RNReactNativeIosLibraryNsr.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				C6A0A5BFB7D7A1967C3BEA8E /* Pods */,
 				130461D3522354F0A3724BD2 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		C6A0A5BFB7D7A1967C3BEA8E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */,
-				328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -359,7 +343,6 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D2B7C14CF21CD75818C28BE /* Pods-RNReactNativeIosLibraryNsr.debug.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -376,7 +359,6 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 328A7D97C148CD8E63692260 /* Pods-RNReactNativeIosLibraryNsr.release.xcconfig */;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
