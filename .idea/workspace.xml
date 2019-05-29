@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c1035a60-76ac-45b2-830b-d79b62dfec22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/ios/NSRDefaultSecurityDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/NSRDefaultSecurityDelegate.m" afterDir="false" />
-    </list>
+    <list default="true" id="c1035a60-76ac-45b2-830b-d79b62dfec22" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -141,16 +139,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559116831725</updated>
-      <workItem from="1559116832890" duration="2726000" />
+      <workItem from="1559116832890" duration="2946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2726000" />
+    <option name="totallyTimeSpent" value="2946000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="23" width="1598" height="952" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" side_tool="true" />
       <window_info id="Favorites" side_tool="true" />
