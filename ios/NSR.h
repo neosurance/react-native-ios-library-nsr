@@ -2,7 +2,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreMotion/CoreMotion.h>
 #import <UserNotifications/UserNotifications.h>
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 #import <sys/utsname.h>
 #import "NSREventWebView.h"
 #import "NSRControllerWebView.h"
