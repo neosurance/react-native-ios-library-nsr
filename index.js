@@ -1,4 +1,5 @@
-'use strict'
 import { NativeModules } from 'react-native';
 
-module.exports = NativeModules.RNReactNativeIosLibraryNsr;
+const { RNReactNativeIosLibraryNsr } = NativeModules;
+
+export default RNReactNativeIosLibraryNsr;
