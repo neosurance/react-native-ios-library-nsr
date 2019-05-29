@@ -20,7 +20,7 @@
 	NSData *jsonData = [NSJSONSerialization dataWithJSONObject:(payload != nil ? payload : [[NSDictionary alloc] init]) options:0 error:&error];
 	NSDictionary *parameters = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
 	
-	[manager POST:url parameters:parameters progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+	[manager POST:url parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {
 		NSRLog(@"Response: %@", responseObject);
 		completionHandler(responseObject, nil);
 	} failure:^(NSURLSessionDataTask *task, NSError *error) {
