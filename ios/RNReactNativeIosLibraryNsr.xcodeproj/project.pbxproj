@@ -43,6 +43,7 @@
 		134814201AA4EA6300B7C361 /* libRNReactNativeIosLibraryNsr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReactNativeIosLibraryNsr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A901074D229E82CB00A3EBE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9010751229E82DA00A3EBE8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A938460B22A65C5500F0DF6C /* eventCruncher.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eventCruncher.html; sourceTree = "<group>"; };
 		A9E44331229D749E00F6EC2D /* NSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSR.m; sourceTree = "<group>"; };
 		A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRControllerWebView.h; sourceTree = "<group>"; };
 		A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRDefaultSecurityDelegate.m; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		A9E44343229D749F00F6EC2D /* push.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = push.wav; sourceTree = "<group>"; };
 		A9E44344229D749F00F6EC2D /* NSRUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRUser.m; sourceTree = "<group>"; };
 		A9E44346229D749F00F6EC2D /* nsr_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nsr_logo.png; sourceTree = "<group>"; };
-		A9E44347229D749F00F6EC2D /* eventCruncher.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eventCruncher.html; sourceTree = "<group>"; };
 		A9E44349229D749F00F6EC2D /* NSRWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRWebView.h; sourceTree = "<group>"; };
 		A9FF75BF229EBB30002491C7 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		A9FF75C2229EBB30002491C7 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
@@ -116,10 +116,10 @@
 			children = (
 				A9E44346229D749F00F6EC2D /* nsr_logo.png */,
 				A9E4433F229D749E00F6EC2D /* NSR.h */,
-				A9E44347229D749F00F6EC2D /* eventCruncher.html */,
 				A9E44331229D749E00F6EC2D /* NSR.m */,
 				A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */,
 				A9E44342229D749E00F6EC2D /* NSRControllerWebView.m */,
+				A938460B22A65C5500F0DF6C /* eventCruncher.html */,
 				A9FF75C4229EBB30002491C7 /* AFHTTPRequestOperation.h */,
 				A9FF75BF229EBB30002491C7 /* AFHTTPRequestOperation.m */,
 				A9FF75CC229EBB31002491C7 /* AFHTTPRequestOperationManager.h */,
