@@ -1130,7 +1130,6 @@ static BOOL _logDisabled = NO;
     return rootViewController;
 }
 
-
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     @try {
         if(manager == self.stillLocationManager) {
