@@ -152,5 +152,37 @@ RCT_EXPORT_METHOD(showList:(RCTResponseSenderBlock)callback){
 
 }
 
+RCT_EXPORT_METHOD(loginExecuted:(RCTResponseSenderBlock)callback){
+
+    NSLog(@"AppLogin");
+    NSString* url = [[NSUserDefaults standardUserDefaults] objectForKey:@"login_url"];
+    if(url != nil){
+        [[NSR sharedInstance] loginExecuted:url];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"login_url"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        callback(@[[NSNull null], @"OK LOGIN EXECUTED: %@",url ]);
+    }else
+        callback(@[@"ERROR LOGIN EXECUTED", [NSNull null] ]);
+
+}
+
+RCT_EXPORT_METHOD(paymentExecuted:(RCTResponseSenderBlock)callback){
+
+    NSLog(@"AppPayment");
+    NSString* url = [[NSUserDefaults standardUserDefaults] objectForKey:@"payment_url"];
+    NSMutableDictionary* paymentInfo = [[NSMutableDictionary alloc] init];
+    [paymentInfo setObject:@"fakeTransactionCode" forKey:@"transactionCode"];
+    [paymentInfo setObject:@"fakeClientIban" forKey:@"iban"];
+    if(url != nil){
+        [[NSR sharedInstance] paymentExecuted:paymentInfo url:url];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"payment_url"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
+        callback(@[[NSNull null], @"OK PAYMENT EXECUTED: %@",url]);
+    }else
+        callback(@[@"ERROR PAYMENT EXECUTED", [NSNull null] ]);
+
+}
+
 
 @end

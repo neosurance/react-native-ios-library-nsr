@@ -3,6 +3,7 @@
 #import "NSRDefaultSecurityDelegate.h"
 #import "NSRControllerWebView.h"
 #import "NSREventWebView.h"
+#import "NSRSampleWFDelegate.h"
 
 @implementation NSR
 
@@ -601,7 +602,7 @@ static BOOL _logDisabled = NO;
 
     }
     /* PUSH Authorizations */
-
+    [[NSR sharedInstance] setWorkflowDelegate:[[NSRSampleWFDelegate alloc] init]];
     NSMutableDictionary* mutableSettings = [[NSMutableDictionary alloc] initWithDictionary:settings];
     NSRLog(@"%@", mutableSettings);
     if(mutableSettings[@"ns_lang"] == nil) {
@@ -856,6 +857,7 @@ static BOOL _logDisabled = NO;
         [content setTitle:mPush[@"title"]];
         [content setBody:mPush[@"body"]];
         [content setUserInfo:mPush];
+
         [content setSound:[UNNotificationSound soundNamed:@"NSR_push.wav"]];
         UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:delay repeats:NO];
         NSRLog(@"push delegate %@", [[UNUserNotificationCenter currentNotificationCenter] delegate]);

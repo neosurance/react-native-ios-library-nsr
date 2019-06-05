@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1035a60-76ac-45b2-830b-d79b62dfec22" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/NSR.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/NSR.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.m" afterDir="false" />
     </list>
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ios/NSR.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+            <state relative-caret-position="802">
+              <caret line="1290" selection-start-line="1290" selection-end-line="1290" />
             </state>
           </provider>
         </entry>
@@ -35,11 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2340">
-              <caret line="156" selection-start-line="156" selection-end-line="156" />
+            <state relative-caret-position="2820">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -62,11 +70,11 @@
         <option value="$PROJECT_DIR$/index.js" />
         <option value="$PROJECT_DIR$/ios/NSRUser.h" />
         <option value="$PROJECT_DIR$/ios/NSRDefaultSecurityDelegate.m" />
-        <option value="$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.h" />
         <option value="$PROJECT_DIR$/ios/NSREventWebView.m" />
         <option value="$PROJECT_DIR$/ios/NSR.m" />
         <option value="$PROJECT_DIR$/ios/NSR.h" />
         <option value="$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.m" />
+        <option value="$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.h" />
       </list>
     </option>
   </component>
@@ -140,12 +148,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559116831725</updated>
-      <workItem from="1559116832890" duration="6656000" />
+      <workItem from="1559116832890" duration="7475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6656000" />
+    <option name="totallyTimeSpent" value="7475000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="49" y="23" width="1598" height="952" extended-state="0" />
@@ -173,6 +181,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.m" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ios/eventCruncher.html">
@@ -207,13 +218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -230,8 +234,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ios/NSR.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="24" lean-forward="true" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        <state relative-caret-position="802">
+          <caret line="1290" selection-start-line="1290" selection-end-line="1290" />
         </state>
       </provider>
     </entry>
@@ -244,8 +248,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="156" selection-start-line="156" selection-end-line="156" />
+        <state relative-caret-position="2820">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ios/RNReactNativeIosLibraryNsr.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
