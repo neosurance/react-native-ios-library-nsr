@@ -124,26 +124,26 @@ static BOOL _logDisabled = NO;
 }
 
 -(void)traceFence {
-    
+
     if(self.fenceLocationManager == nil)
         self.fenceLocationManager = [[CLLocationManager alloc] init];
-    
+
     self.fenceLocationManager.delegate = self;
-    
+
     if([self.fenceLocationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
         [self.fenceLocationManager requestAlwaysAuthorization];
-    
+
     [self.fenceLocationManager startUpdatingLocation];
-    
+
     [self buildFencesAndRegions];
-    
+
 }
 
 -(void)buildFencesAndRegions{
-    
+
     NSArray* fencesArray = [self getFences];
     self.regionsArray = [[NSMutableArray alloc] init];
-    
+
     //ALL FENCES
     int countFen = [fencesArray count];
     for (int i = 0; i < countFen; i++){
@@ -157,28 +157,28 @@ static BOOL _logDisabled = NO;
         regionTmp.notifyOnEntry = YES;
         regionTmp.notifyOnExit=YES;
         [self.regionsArray addObject:regionTmp];
-    
-        
+
+
         NSLog (@"Fence [%i] = %@", i, [fencesArray objectAtIndex: i]);
         NSLog (@"Region [%i] = %@", i, [self.regionsArray objectAtIndex: i]);
-        
+
     }
-    
+
     NSData* myData = [NSKeyedArchiver archivedDataWithRootObject:self.regionsArray];
     [[NSUserDefaults standardUserDefaults] setObject:myData forKey:@"clregions"];
-    
+
     [self startMonitoring];
-    
+
 }
 -(void) startMonitoring{
-    
+
     self.regionsArray = [self getCLRegions];
     int countReg = [self.regionsArray count];
     for (int z = 0; z < countReg; z++){
         NSLog (@"fenceLocationManager startMonitoringForRegion [%i] = %@", z, [self.regionsArray objectAtIndex: z]);
         [self.fenceLocationManager startMonitoringForRegion:[self.regionsArray objectAtIndex: z]];
     }
-    
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
@@ -225,7 +225,7 @@ static BOOL _logDisabled = NO;
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region {
     NSRLog(@"Fences >>> didExitRegion!");
 }
-    
+
 -(void)hardTraceLocation {
     NSRLog(@"hardTraceLocation");
     NSDictionary* conf = [self getConf];
@@ -571,6 +571,18 @@ static BOOL _logDisabled = NO;
     return [[NSUserDefaults standardUserDefaults] objectForKey:@"NSR_pushAuth"];
 }
 
+/* PUSH */
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler   API_AVAILABLE(ios(10.0)){
+    completionHandler(UNNotificationPresentationOptionAlert | UNNotificationPresentationOptionSound);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler   API_AVAILABLE(ios(10.0)){
+    if(![[NSR sharedInstance] forwardNotification:response]) {
+    }
+    completionHandler();
+}
+/* PUSH */
+
 -(void)setup:(NSDictionary*)settings {
     if([self gracefulDegradate]) {
         return;
@@ -578,6 +590,18 @@ static BOOL _logDisabled = NO;
     _logDisabled = [self getBoolean:settings key:@"disable_log"];
 
     NSRLog(@"setup");
+
+    /* PUSH Authorizations */
+    if (@available(iOS 10.0, *)) {
+        UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+
+        UNAuthorizationOptions options = UNAuthorizationOptionAlert | UNAuthorizationOptionSound;
+        [center requestAuthorizationWithOptions:options completionHandler:^(BOOL granted, NSError* _Nullable error) {}];
+
+    }
+    /* PUSH Authorizations */
+
     NSMutableDictionary* mutableSettings = [[NSMutableDictionary alloc] initWithDictionary:settings];
     NSRLog(@"%@", mutableSettings);
     if(mutableSettings[@"ns_lang"] == nil) {
@@ -603,8 +627,8 @@ static BOOL _logDisabled = NO;
     }
     [self setSettings: mutableSettings];
     //if(!setupInited){
-        setupInited = YES;
-        [self initJob];
+    setupInited = YES;
+    [self initJob];
     //}
 }
 
@@ -1135,63 +1159,63 @@ static BOOL _logDisabled = NO;
         if(manager == self.stillLocationManager) {
             [manager stopUpdatingLocation];
         }
-        
+
         [self opportunisticTrace];
         [self checkHardTraceLocation];
         CLLocation *newLocation = [locations lastObject];
-        
+
         if(manager == self.fenceLocationManager && LMStartMonitoring) {
-            
+
             self.regionsArray = [self getCLRegions];
             int countReg = [self.regionsArray count];
-            
+
             for (int i = 0; i < countReg; i++){
-                
+
                 CLRegion* regionTmp = [self.regionsArray objectAtIndex: i]; //identifier
-                
+
                 NSString* regionId = [regionTmp identifier];
-                
+
                 NSMutableString* strEnter = [[NSMutableString alloc] init];
                 [strEnter appendString:regionId];
                 [strEnter appendString:@" ENTER"];
-                
+
                 NSMutableString* strExit = [[NSMutableString alloc] init];
                 [strExit appendString:regionId];
                 [strExit appendString:@" EXIT"];
-                
+
                 NSMutableString* strDwell = [[NSMutableString alloc] init];
                 [strDwell appendString:regionId];
                 [strDwell appendString:@" DWELL"];
-                
+
                 NSLog (@"Element %i = %@", i, regionTmp);
-                
+
                 CLLocationCoordinate2D newPoint = CLLocationCoordinate2DMake(newLocation.coordinate.latitude,newLocation.coordinate.longitude);
                 NSString* newStatus = ([regionTmp containsCoordinate:newPoint]) ? @"inside" : @"outside";
-                
+
                 if(lastStatus != newStatus){
                     lastStatus = newStatus;
-                    
+
                     NSMutableDictionary* payload = [[NSMutableDictionary alloc] init];
                     [payload setObject:[NSNumber numberWithFloat:newLocation.coordinate.latitude] forKey:@"latitude"];
                     [payload setObject:[NSNumber numberWithFloat:newLocation.coordinate.longitude] forKey:@"longitude"];
                     [payload setObject:[NSNumber numberWithFloat:newLocation.altitude] forKey:@"altitude"];
-                    
-                    
+
+
                     if([regionTmp containsCoordinate:newPoint]){
                         lastStatus = @"inside";
                         [payload setObject:strEnter forKey:@"id"];
                         [payload setObject:@"enter" forKey:@"fence"];
-                        
+
                         [self didEnterRegionSelf:regionTmp:payload];
                     }else{
                         lastStatus = @"outside";
                         DwellRegion = NO;
                         [payload setObject:strExit  forKey:@"id"];
                         [payload setObject:@"exit" forKey:@"fence"];
-                        
+
                         [self didExitRegionSelf:regionTmp:payload];
                     }
-                    
+
                 }else if(!DwellRegion && [lastStatus isEqualToString:@"inside"]){
                     DwellRegion = YES;
                     NSMutableDictionary* payload = [[NSMutableDictionary alloc] init];
@@ -1200,13 +1224,13 @@ static BOOL _logDisabled = NO;
                     [payload setObject:[NSNumber numberWithFloat:newLocation.altitude] forKey:@"altitude"];
                     [payload setObject:@"dwell" forKey:@"fence"];
                     [payload setObject:strDwell forKey:@"id"];
-                    
+
                     [self didDwellRegionSelf:regionTmp:payload];
                 }
-                
+
             }//*** END FOR
         }
-        
+
         NSRLog(@"enter didUpdateToLocation");
         NSDictionary* conf = [self getConf];
         if(conf != nil && [self getBoolean:conf[@"position"] key:@"enabled"]) {
@@ -1217,7 +1241,7 @@ static BOOL _logDisabled = NO;
             [self crunchEvent:@"position" payload:payload];
             stillLocationSent = (manager == self.stillLocationManager);
         }
-        
+
         NSRLog(@"didUpdateToLocation exit");
     }
     @catch (NSException *exception) {
