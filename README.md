@@ -23,11 +23,6 @@
 1. Inside your **info.plist** be sure to have the following permissions:
 
 	```plist
-	<key>NSAppTransportSecurity</key>
-	<dict>
-	  <key>NSAllowsArbitraryLoads</key>
-	  <true/>
-	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>use camera...</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
@@ -38,12 +33,6 @@
 	<string>When in use...</string>
 	<key>NSMotionUsageDescription</key>
 	<string>Motion...</string>
-	<key>UIBackgroundModes</key>
-	<array>
-	  <string>fetch</string>
-	  <string>location</string>
-	  <string>remote-notification</string>
-	</array>
 	```
 
 ### Usage
@@ -60,6 +49,7 @@ var settings = {
         disable_log:false
 };
 
+...
 
 if(Platform.OS === 'ios') {
 
