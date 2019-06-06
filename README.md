@@ -23,16 +23,44 @@
 1. Inside your **info.plist** be sure to have the following permissions:
 
 	```plist
-	<key>NSCameraUsageDescription</key>
-	<string>use camera...</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Always and when in use...</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Always...</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>When in use...</string>
-	<key>NSMotionUsageDescription</key>
-	<string>Motion...</string>
+	<key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>localhost</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+        <string>location</string>
+        <string>remote-notification</string>
+    </array>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Always and when in use...</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Always...</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>When in use...</string>
+    <key>NSMotionUsageDescription</key>
+    <string>Motion...</string>
+    <key>NSCameraUsageDescription</key>
+    <string>for claim...</string>
+	```
+
+2. Be sure to have the following capabilities:
+
+	```
+	Targets -> Your App -> Capabilities -> Background Modes ON:
+	  - Location updates (checked)
+	  - Background fetch (checked)
+	  - Remote Notifications (checked)
 	```
 
 ### Usage
