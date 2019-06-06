@@ -5,10 +5,10 @@
 
 ### Installation
 
-`$ npm install react-native-ios-library-nsr --save` or `$ yarn add react-native-ios-library-nsr --save`
+1. Do `npm install --save git+https://github.com/neosurance/react-native-ios-library-nsr.git` in your main project, or `yarn add git+https://github.com/neosurance/react-native-ios-library-nsr.git`
 
 
-`$ react-native link react-native-ios-library-nsr`
+2. Do `react-native link react-native-ios-library-nsr` in your main project
 
 #### XCode
 
