@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A9010750229E82CB00A3EBE8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A901074D229E82CB00A3EBE8 /* UIKit.framework */; };
 		A9010752229E82DA00A3EBE8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9010751229E82DA00A3EBE8 /* AVFoundation.framework */; };
+		A9807FDE22AAA013009CC185 /* NSRSampleWFDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9807FDC22AAA012009CC185 /* NSRSampleWFDelegate.m */; };
 		A9E4434A229D749F00F6EC2D /* NSR.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44331229D749E00F6EC2D /* NSR.m */; };
 		A9E4434C229D749F00F6EC2D /* NSRDefaultSecurityDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */; };
 		A9E4434D229D749F00F6EC2D /* NSRWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E44337229D749E00F6EC2D /* NSRWebView.m */; };
@@ -44,6 +45,8 @@
 		A901074D229E82CB00A3EBE8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9010751229E82DA00A3EBE8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A938460B22A65C5500F0DF6C /* eventCruncher.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = eventCruncher.html; sourceTree = "<group>"; };
+		A9807FDC22AAA012009CC185 /* NSRSampleWFDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRSampleWFDelegate.m; sourceTree = "<group>"; };
+		A9807FDD22AAA012009CC185 /* NSRSampleWFDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRSampleWFDelegate.h; sourceTree = "<group>"; };
 		A9E44331229D749E00F6EC2D /* NSR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSR.m; sourceTree = "<group>"; };
 		A9E44332229D749E00F6EC2D /* NSRControllerWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSRControllerWebView.h; sourceTree = "<group>"; };
 		A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSRDefaultSecurityDelegate.m; sourceTree = "<group>"; };
@@ -138,6 +141,8 @@
 				A9FF75C7229EBB30002491C7 /* AFURLResponseSerialization.h */,
 				A9FF75CF229EBB31002491C7 /* AFURLResponseSerialization.m */,
 				A9FF75C5229EBB30002491C7 /* AFURLSessionManager.h */,
+				A9807FDD22AAA012009CC185 /* NSRSampleWFDelegate.h */,
+				A9807FDC22AAA012009CC185 /* NSRSampleWFDelegate.m */,
 				A9FF75D1229EBB31002491C7 /* AFURLSessionManager.m */,
 				A9E4433D229D749E00F6EC2D /* NSRDefaultSecurityDelegate.h */,
 				A9E44336229D749E00F6EC2D /* NSRDefaultSecurityDelegate.m */,
@@ -225,6 +230,7 @@
 				A9FF75D6229EBB31002491C7 /* AFHTTPSessionManager.m in Sources */,
 				A9E4434D229D749F00F6EC2D /* NSRWebView.m in Sources */,
 				A9FF75DC229EBB31002491C7 /* AFSecurityPolicy.m in Sources */,
+				A9807FDE22AAA013009CC185 /* NSRSampleWFDelegate.m in Sources */,
 				A9FF75D8229EBB31002491C7 /* AFNetworkReachabilityManager.m in Sources */,
 				A9FF75DA229EBB31002491C7 /* AFURLResponseSerialization.m in Sources */,
 				A9E4434A229D749F00F6EC2D /* NSR.m in Sources */,

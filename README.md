@@ -12,11 +12,8 @@
 
 #### XCode
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-ios-library-nsr` ➜ `ios` and add `RNReactNativeIosLibraryNsr.xcodeproj`
-3. Go to `node_modules` ➜ `react-native-ios-library-nsr` ➜ `ios` and add `eventCruncher.html`
-4. In XCode, in the project navigator, select your project. Add `libRNReactNativeIosLibraryNsr.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-5. Run your project (`Cmd+R`)<
+1. Go to `node_modules` ➜ `react-native-ios-library-nsr` ➜ `ios` and add `eventCruncher.html`
+2. In XCode, in the project navigator, select your project. Be sure that `libRNReactNativeIosLibraryNsr.a` is added to your project's `Build Phases` ➜ `Link Binary With Libraries`
 
 ### Requirements
 
