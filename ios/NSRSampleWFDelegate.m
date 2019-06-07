@@ -21,18 +21,11 @@
 
 @implementation NSRSampleWFDelegate
 
--(void)setCommandDelegate:(id <CDVCommandDelegate>)delegate {
-    self._delegate = delegate;
-}
 
 -(BOOL)executeLogin:(NSString*)url {
 	[[NSUserDefaults standardUserDefaults] setObject:url forKey:@"login_url"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
-    CDVPluginResult* pluginResult = nil;
-    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Arg was null"];
-    [self._delegate sendPluginResult:pluginResult callbackId:@"id"];
-
 	return YES;
 }
 

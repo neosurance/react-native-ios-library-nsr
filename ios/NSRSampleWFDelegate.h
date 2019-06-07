@@ -19,9 +19,7 @@
 
 #import <Foundation/Foundation.h>
 #import "NSR.h"
-#import <Cordova/CDVPlugin.h>
+
 
 @interface NSRSampleWFDelegate : NSObject<NSRWorkflowDelegate>
-@property id<CDVCommandDelegate> _delegate;
-- (void)setCommandDelegate:(id<CDVCommandDelegate>)delegate;
 @end
