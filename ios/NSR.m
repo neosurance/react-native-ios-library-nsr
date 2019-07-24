@@ -128,20 +128,20 @@ static BOOL _logDisabled = NO;
 
 -(void)traceFence {
 
-	NSDictionary* conf = [self getConf];
-	    if(conf != nil && [self getBoolean:conf[@"fence"] key:@"enabled"]) {
-	        if(self.fenceLocationManager == nil)
-	            self.fenceLocationManager = [[CLLocationManager alloc] init];
+    NSDictionary* conf = [self getConf];
+    if(conf != nil && [self getBoolean:conf[@"fence"] key:@"enabled"]) {
+        if(self.fenceLocationManager == nil)
+            self.fenceLocationManager = [[CLLocationManager alloc] init];
         
-	        self.fenceLocationManager.delegate = self;
+        self.fenceLocationManager.delegate = self;
         
-	        if([self.fenceLocationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
-	            [self.fenceLocationManager requestAlwaysAuthorization];
+        if([self.fenceLocationManager respondsToSelector:@selector(requestAlwaysAuthorization)])
+            [self.fenceLocationManager requestAlwaysAuthorization];
         
-	        [self.fenceLocationManager startUpdatingLocation];
+        [self.fenceLocationManager startUpdatingLocation];
         
-	        [self buildFencesAndRegions];
-	    }
+        [self buildFencesAndRegions];
+    }
 
 }
 
@@ -1164,9 +1164,9 @@ static BOOL _logDisabled = NO;
         }else{
             [controller.view setBackgroundColor:topController.view.backgroundColor];
         }
-		
-		controller.modalPresentationStyle = 0;
-		
+        
+        controller.modalPresentationStyle = 0;
+        
         [topController presentViewController:controller animated:YES completion:nil];
     }
 }
@@ -1349,5 +1349,4 @@ static BOOL _logDisabled = NO;
     [self showUrl:url params:params];
 }
 @end
-
 
