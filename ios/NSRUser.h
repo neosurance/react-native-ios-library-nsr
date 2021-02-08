@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 @interface NSRUser:NSObject
 
 @property(nonatomic, copy) NSString* code;
