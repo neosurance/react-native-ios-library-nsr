@@ -44,41 +44,6 @@ RCT_EXPORT_METHOD(setup: (NSString*)jsonSettings : (RCTResponseSenderBlock)callb
 
 }
 
-RCT_EXPORT_METHOD(refreshFences: (NSString*)jsonArgs : (RCTResponseSenderBlock)callback){
-
-    @try {
-        NSMutableDictionary* myarg = [NSJSONSerialization JSONObjectWithData:[jsonArgs dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
-
-        NSRUser* user = [[NSRUser alloc] init];
-        user.email = [myarg valueForKey :@"email" ];
-        user.code = [myarg valueForKey :@"code" ];
-        user.firstname = [myarg valueForKey :@"firstname" ];
-        user.lastname = [myarg valueForKey :@"lastname" ];
-
-        user.mobile = [myarg valueForKey :@"mobile" ];
-        user.fiscalCode = [myarg valueForKey :@"fiscalCode" ];
-        user.gender = [myarg valueForKey :@"gender" ];
-        user.birthday = [myarg valueForKey :@"birthday" ];
-        user.address = [myarg valueForKey :@"address" ];
-        user.zipCode = [myarg valueForKey :@"zipCode" ];
-        user.city = [myarg valueForKey :@"city" ];
-        user.stateProvince = [myarg valueForKey :@"stateProvince" ];
-        user.country = [myarg valueForKey :@"country" ];
-        user.extra = [myarg valueForKey :@"extra" ];
-        user.locals = [myarg valueForKey :@"locals" ];
-
-        [[NSR sharedInstance] registerUser:user];
-
-        NSString* resp = [@"OK REFRESH FENCES >>> " stringByAppendingString:jsonArgs];
-        callback(@[[NSNull null], resp]);
-
-    }
-    @catch (NSException * e) {
-        callback(@[@"ERROR REFRESH FENCES", [NSNull null] ]);
-    }
-
-}
-
 RCT_EXPORT_METHOD(registerUser: (NSString*)jsonUser : (RCTResponseSenderBlock)callback){
 
     @try {
@@ -96,9 +61,9 @@ RCT_EXPORT_METHOD(registerUser: (NSString*)jsonUser : (RCTResponseSenderBlock)ca
         user.gender = [myarg valueForKey :@"gender" ];
         user.birthday = [myarg valueForKey :@"birthday" ];
         user.address = [myarg valueForKey :@"address" ];
-        user.zipCode = [myarg valueForKey :@"zipCode" ];
+        user.cap = [myarg valueForKey :@"zipCode" ];
         user.city = [myarg valueForKey :@"city" ];
-        user.stateProvince = [myarg valueForKey :@"stateProvince" ];
+        user.province = [myarg valueForKey :@"province" ];
         user.country = [myarg valueForKey :@"country" ];
         user.extra = [myarg valueForKey :@"extra" ];
         user.locals = [myarg valueForKey :@"locals" ];
@@ -182,6 +147,38 @@ RCT_EXPORT_METHOD(paymentExecuted:(RCTResponseSenderBlock)callback){
     }else
         callback(@[@"ERROR PAYMENT EXECUTED", [NSNull null] ]);
 
+}
+
+RCT_EXPORT_METHOD(policies:(RCTResponseSenderBlock)callback){
+
+    NSLog(@"Policies");
+    NSMutableDictionary* criteria = [[NSMutableDictionary alloc] init];
+                
+    [criteria setObject:[NSNumber numberWithBool:YES] forKey:@"available"];
+                
+    [[NSR sharedInstance] policies:criteria completionHandler:^(NSDictionary *responseObject, NSError *error) {
+        if (error == nil) {
+            NSRLog(@"policies response %@", [[NSR sharedInstance] dictToJson:responseObject]);
+                        
+            NSString* resp = [[NSR sharedInstance] dictToJson:responseObject];
+            callback(@[[NSNull null], resp]);
+            
+        } else {
+            NSRLog(@"policies error %@", error);
+            callback(@[@"policies error %@", error, [NSNull null] ]);
+        }
+    }];
+    
+}
+
+RCT_EXPORT_METHOD(closeView:(RCTResponseSenderBlock)callback){
+
+    NSLog(@"CloseView");
+    
+    [[NSR sharedInstance] closeView];
+    
+    callback(@[[NSNull null], @"OK VIEW CLOSED!"]);
+    
 }
 
 

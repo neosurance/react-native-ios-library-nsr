@@ -1,6 +1,3 @@
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
-
 @interface NSRUser:NSObject
 
 @property(nonatomic, copy) NSString* code;
@@ -12,9 +9,9 @@
 @property(nonatomic, copy) NSString* gender;
 @property(nonatomic, copy) NSDate* birthday;
 @property(nonatomic, copy) NSString* address;
-@property(nonatomic, copy) NSString* zipCode;
+@property(nonatomic, copy) NSString* cap;
 @property(nonatomic, copy) NSString* city;
-@property(nonatomic, copy) NSString* stateProvince;
+@property(nonatomic, copy) NSString* province;
 @property(nonatomic, copy) NSString* country;
 @property(nonatomic, copy) NSDictionary* extra;
 @property(nonatomic, copy) NSDictionary* locals;

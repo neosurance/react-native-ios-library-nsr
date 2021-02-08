@@ -31,14 +31,14 @@
 		if([dict objectForKey:@"address"] != nil) {
 			self.address = [dict objectForKey:@"address"];
 		}
-		if([dict objectForKey:@"zipCode"] != nil) {
-			self.zipCode = [dict objectForKey:@"zipCode"];
+		if([dict objectForKey:@"cap"] != nil) {
+			self.cap = [dict objectForKey:@"cap"];
 		}
 		if([dict objectForKey:@"city"] != nil) {
 			self.city = [dict objectForKey:@"city"];
 		}
-		if([dict objectForKey:@"stateProvince"] != nil) {
-			self.stateProvince = [dict objectForKey:@"stateProvince"];
+		if([dict objectForKey:@"province"] != nil) {
+			self.province = [dict objectForKey:@"province"];
 		}
 		if([dict objectForKey:@"country"] != nil) {
 			self.country = [dict objectForKey:@"country"];
@@ -82,14 +82,14 @@
 	if(self.address != nil) {
 		[dict setObject:self.address forKey:@"address"];
 	}
-	if(self.zipCode != nil) {
-		[dict setObject:self.zipCode forKey:@"zipCode"];
+	if(self.cap != nil) {
+		[dict setObject:self.cap forKey:@"cap"];
 	}
 	if(self.city != nil) {
 		[dict setObject:self.city forKey:@"city"];
 	}
-	if(self.stateProvince != nil) {
-		[dict setObject:self.stateProvince forKey:@"stateProvince"];
+	if(self.province != nil) {
+		[dict setObject:self.province forKey:@"province"];
 	}
 	if(self.country != nil) {
 		[dict setObject:self.country forKey:@"country"];

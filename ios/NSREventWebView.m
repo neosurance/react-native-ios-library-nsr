@@ -9,15 +9,9 @@
 		self.webConfiguration = [[WKWebViewConfiguration alloc] init];
 		[self.webConfiguration.userContentController addScriptMessageHandler:self name:@"app"];
 		self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:self.webConfiguration];
-		
-        //NSURL* rurl = [[nsr frameworkBundle] URLForResource:@"eventCruncher" withExtension:@"html"];
-        //NSURL* rurl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"eventCruncher" ofType:@"html"] isDirectory:NO];
-        //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"eventCruncher" ofType:@"html"] isDirectory:NO]]];
-		//NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?ns_lang=%@&ns_log=%@", rurl ,[nsr getLang],[NSR logDisabled]?@"false":@"true"]];
-		//[self.webView loadRequest:[[NSURLRequest alloc] initWithURL:url]];
-		NSString *htmlFile = [[NSBundle mainBundle] pathForResource:@"eventCruncher" ofType:@"html"];
-		NSString* htmlString = [NSString stringWithContentsOfFile:htmlFile encoding:NSUTF8StringEncoding error:nil];
-		[self.webView loadHTMLString:htmlString baseURL: [[NSBundle mainBundle] bundleURL]];
+		NSURL* rurl = [[nsr frameworkBundle] URLForResource:@"eventCruncher" withExtension:@"html"];
+		NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@?ns_lang=%@&ns_log=%@", rurl ,[nsr getLang],[NSR logDisabled]?@"false":@"true"]];
+		[self.webView loadRequest:[[NSURLRequest alloc] initWithURL:url]];
 	}
 	return self;
 }
@@ -25,11 +19,7 @@
 -(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
 	@try {
 		NSDictionary *body = (NSDictionary*)message.body;
-        NSArray* keys = [body allKeys];
-        
 		NSR* nsr = [NSR sharedInstance];
-        
-        //TODO get string
 		if(body[@"log"] != nil) {
 			NSRLog(@"%@",body[@"log"]);
 		}
@@ -53,7 +43,6 @@
 			[nsr killPush:body[@"killPush"]];
 		}
 		if(body[@"what"] != nil) {
-            
 			if([@"continueInitJob" isEqualToString:body[@"what"]]) {
 				[nsr continueInitJob];
 			}
@@ -102,12 +91,16 @@
 					}
 				}];
 			}
+			
 			if ([@"store" isEqualToString:body[@"what"]] && body[@"key"] != nil && body[@"data"] != nil) {
-				[[NSUserDefaults standardUserDefaults] setObject:body[@"data"] forKey:[NSString stringWithFormat:@"NSR_WV_%@",body[@"key"]]];
-				[[NSUserDefaults standardUserDefaults] synchronize];
+				[nsr storeData:body[@"key"] data:body[@"data"]];
 			}
 			if ([@"retrive" isEqualToString:body[@"what"]] && body[@"key"] != nil && body[@"callBack"] != nil) {
-				NSDictionary* val = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"NSR_WV_%@",body[@"key"]]];
+				NSDictionary* val = [nsr retrieveData:body[@"key"]];
+				[self eval:[NSString stringWithFormat:@"%@(%@)", body[@"callBack"], val != nil?[nsr dictToJson:val]:@"null"]];
+			}
+			if ([@"retrieve" isEqualToString:body[@"what"]] && body[@"key"] != nil && body[@"callBack"] != nil) {
+				NSDictionary* val = [nsr retrieveData:body[@"key"]];
 				[self eval:[NSString stringWithFormat:@"%@(%@)", body[@"callBack"], val != nil?[nsr dictToJson:val]:@"null"]];
 			}
 			if([@"callApi" isEqualToString:body[@"what"]] && body[@"callBack"] != nil) {
@@ -141,15 +134,6 @@
 			if([@"accurateLocationEnd" isEqualToString:body[@"what"]]) {
 				[nsr accurateLocationEnd];
 			}
-            if ([@"activateFences" isEqualToString:body[@"what"]]) {
-                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-                [userDefaults setObject:body[@"fences"] forKey:@"fences"];
-                [userDefaults synchronize];
-                [nsr traceFence];
-            }
-            if ([@"removeFences" isEqualToString:body[@"what"]]) {
-                [nsr traceFence];
-            }
 		}
 	}
 	@catch (NSException *exception) {

@@ -39,4 +39,12 @@
 -(void)confirmTransaction:(NSDictionary*)paymentInfo {
 }
 
+-(void)keepAlive {
+    NSLog(@"keepAlive");
+}
+
+-(void)goTo:(NSString*)area {
+    NSLog(@"goTo: %@", area);
+}
+
 @end
