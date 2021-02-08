@@ -105,7 +105,7 @@ RCT_EXPORT_METHOD(sendTrialEvent: (NSString*)jsonArgs : (RCTResponseSenderBlock)
 
 }
 
-RCT_EXPORT_METHOD(showList:(RCTResponseSenderBlock)callback){
+RCT_EXPORT_METHOD(showApp:(RCTResponseSenderBlock)callback){
 
     @try {
         [[NSR sharedInstance] showApp];
@@ -117,7 +117,7 @@ RCT_EXPORT_METHOD(showList:(RCTResponseSenderBlock)callback){
 
 }
 
-RCT_EXPORT_METHOD(loginExecuted:(RCTResponseSenderBlock)callback){
+RCT_EXPORT_METHOD(appLogin:(RCTResponseSenderBlock)callback){
 
     NSLog(@"AppLogin");
     NSString* url = [[NSUserDefaults standardUserDefaults] objectForKey:@"login_url"];
@@ -131,7 +131,7 @@ RCT_EXPORT_METHOD(loginExecuted:(RCTResponseSenderBlock)callback){
 
 }
 
-RCT_EXPORT_METHOD(paymentExecuted:(RCTResponseSenderBlock)callback){
+RCT_EXPORT_METHOD(appPayment:(RCTResponseSenderBlock)callback){
 
     NSLog(@"AppPayment");
     NSString* url = [[NSUserDefaults standardUserDefaults] objectForKey:@"payment_url"];
