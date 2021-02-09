@@ -1,5 +1,6 @@
 #import "NSRControllerWebView.h"
 #import "NSR.h"
+#import "NSRSampleWFDelegate.h"
 
 @implementation NSRControllerWebView
 
@@ -128,24 +129,32 @@
 				}
 			}];
 		}
-		if(nsr.workflowDelegate != nil && [@"executeLogin" isEqualToString:body[@"what"]] && body[@"callBack"] != nil) {
+        
+        if(nsr.workflowDelegate == nil){
+            [[NSR sharedInstance] setWorkflowDelegate:[[NSRSampleWFDelegate alloc] init]];
+        }
+        
+		if(/*nsr.workflowDelegate != nil &&*/ [@"executeLogin" isEqualToString:body[@"what"]] && body[@"callBack"] != nil) {
 			[self eval:[NSString stringWithFormat:@"%@(%@)", body[@"callBack"], [nsr.workflowDelegate executeLogin:self.webView.URL.absoluteString]?@"true":@"false"]];
 		}
-		if(nsr.workflowDelegate != nil && [@"executePayment" isEqualToString:body[@"what"]] && body[@"payment"] != nil) {
+		if(/*nsr.workflowDelegate != nil &&*/ [@"executePayment" isEqualToString:body[@"what"]] && body[@"payment"] != nil) {
 			NSDictionary* paymentInfo = [nsr.workflowDelegate executePayment:body[@"payment"] url:self.webView.URL.absoluteString];
 			if(body[@"callBack"] != nil) {
 				[self eval:[NSString stringWithFormat:@"%@(%@)", body[@"callBack"], paymentInfo != nil?[nsr dictToJson:paymentInfo]:@""]];
-			}
+            }else{
+                [[NSR sharedInstance] closeView];
+            }
 		}
-		if(nsr.workflowDelegate != nil && [@"confirmTransaction" isEqualToString:body[@"what"]] && body[@"paymentInfo"] != nil) {
+		if(/*nsr.workflowDelegate != nil &&*/ [@"confirmTransaction" isEqualToString:body[@"what"]] && body[@"paymentInfo"] != nil) {
 			[nsr.workflowDelegate confirmTransaction:body[@"paymentInfo"]];
 		}
-		if(nsr.workflowDelegate != nil && [@"keepAlive" isEqualToString:body[@"what"]]) {
+		if(/*nsr.workflowDelegate != nil &&*/ [@"keepAlive" isEqualToString:body[@"what"]]) {
 			[nsr.workflowDelegate keepAlive];
 		}
-		if(nsr.workflowDelegate != nil && [@"goTo" isEqualToString:body[@"what"]] && body[@"area"] != nil) {
+		if(/*nsr.workflowDelegate != nil &&*/ [@"goTo" isEqualToString:body[@"what"]] && body[@"area"] != nil) {
 			[nsr.workflowDelegate goTo: body[@"area"]];
 		}
+        
 	}
 }
 
