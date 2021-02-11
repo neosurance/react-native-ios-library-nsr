@@ -18,6 +18,7 @@
  */
 
 #import "NSRSampleWFDelegate.h"
+#import "RNReactNativeIosLibraryNsr.h"
 
 @implementation NSRSampleWFDelegate
 
@@ -26,17 +27,25 @@
 	[[NSUserDefaults standardUserDefaults] setObject:url forKey:@"login_url"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
     
+    NSNotification *notification = [NSNotification notificationWithName:@"NSRExecuteLogin" object:@"nsr object" userInfo:@{@"name": @"NSRExecutedLogin", @"url":url}];
+    [RNReactNativeIosLibraryNsr emitEventWithName: notification];
+    
 	return YES;
 }
 
 -(NSDictionary*)executePayment:(NSDictionary*)payment url:(NSString*)url {
 	[[NSUserDefaults standardUserDefaults] setObject:url forKey:@"payment_url"];
 	[[NSUserDefaults standardUserDefaults] synchronize];
+    
+    NSNotification *notification = [NSNotification notificationWithName:@"NSRExecutePayment" object:@"nsr object" userInfo:@{@"name": @"NSRExecutedPayment", @"url":url, @"payload": payment}];
+    [RNReactNativeIosLibraryNsr emitEventWithName: notification];
 	
 	return nil;
 }
 
 -(void)confirmTransaction:(NSDictionary*)paymentInfo {
+    NSNotification *notification = [NSNotification notificationWithName:@"NSRConfirmTransaction" object:@"nsr object" userInfo:@{@"name": @"NSRConfirmedTransaction", @"payload": paymentInfo}];
+    [RNReactNativeIosLibraryNsr emitEventWithName: notification];
 }
 
 -(void)keepAlive {

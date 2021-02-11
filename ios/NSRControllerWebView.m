@@ -1,6 +1,7 @@
 #import "NSRControllerWebView.h"
 #import "NSR.h"
 #import "NSRSampleWFDelegate.h"
+#import "RNReactNativeIosLibraryNsr.h"
 
 @implementation NSRControllerWebView
 
@@ -135,7 +136,7 @@
         }
         
 		if(/*nsr.workflowDelegate != nil &&*/ [@"executeLogin" isEqualToString:body[@"what"]] && body[@"callBack"] != nil) {
-			[self eval:[NSString stringWithFormat:@"%@(%@)", body[@"callBack"], [nsr.workflowDelegate executeLogin:self.webView.URL.absoluteString]?@"true":@"false"]];
+			[self eval:[NSString stringWithFormat:@"%@(%@)", body[@"callBack"], [nsr.workflowDelegate executeLogin:self.webView.URL.absoluteString]?@"true":@"false"]];            
 		}
 		if(/*nsr.workflowDelegate != nil &&*/ [@"executePayment" isEqualToString:body[@"what"]] && body[@"payment"] != nil) {
 			NSDictionary* paymentInfo = [nsr.workflowDelegate executePayment:body[@"payment"] url:self.webView.URL.absoluteString];

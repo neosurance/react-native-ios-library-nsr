@@ -1,11 +1,19 @@
 
-#if __has_include("RCTBridgeModule.h")
-#import "RCTBridgeModule.h"
-#else
+#if __has_include(<React/RCTBridgeModule.h>)
 #import <React/RCTBridgeModule.h>
+#else
+#import "RCTBridgeModule.h"
 #endif
 
-@interface RNReactNativeIosLibraryNsr : NSObject <RCTBridgeModule>
+#if __has_include(<React/RCTEventEmitter.h>)
+#import <React/RCTEventEmitter.h>
+#else
+#import "RCTEventEmitter.h"
+#endif
+
+@interface RNReactNativeIosLibraryNsr : RCTEventEmitter <RCTBridgeModule>
+
++ (void)emitEventWithName:(NSNotification *)notification;
 
 @end
   

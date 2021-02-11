@@ -2,12 +2,16 @@
 #import "RNReactNativeIosLibraryNsr.h"
 #import "NSR.h"
 
+
 @implementation RNReactNativeIosLibraryNsr
 
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
 }
+
+
+
 RCT_EXPORT_MODULE()
 
 RCT_EXPORT_METHOD(greetings: (RCTResponseSenderBlock)callback){
@@ -33,7 +37,7 @@ RCT_EXPORT_METHOD(setup: (NSString*)jsonSettings : (RCTResponseSenderBlock)callb
         [settings setObject:[UIColor colorWithRed:0.2 green:1 blue:1 alpha:1] forKey:@"back_color"];
         id res = [NSR sharedInstance];
         [res setup:settings];
-
+        
         NSString* resp = [@"OK SETUP >>> " stringByAppendingString:jsonSettings];
         callback(@[[NSNull null], resp]);
 
@@ -71,13 +75,12 @@ RCT_EXPORT_METHOD(registerUser: (NSString*)jsonUser : (RCTResponseSenderBlock)ca
         [[NSR sharedInstance] registerUser:user];
 
 
-
-        NSString* resp = [@"OK REGISTER USER >>> " stringByAppendingString:jsonUser];
+        NSString* resp = @"OK REGISTERING USER... >>> "; // [@"OK REGISTERING USER... >>> " stringByAppendingString:jsonUser];
         callback(@[[NSNull null], resp]);
 
     }
     @catch (NSException * e) {
-        callback(@[@"ERROR REGISTER USER", [NSNull null] ]);
+        callback(@[@"ERROR REGISTERING USER", [NSNull null] ]);
     }
 
 }
@@ -96,11 +99,11 @@ RCT_EXPORT_METHOD(sendTrialEvent: (NSString*)jsonArgs : (RCTResponseSenderBlock)
 
         [[NSR sharedInstance] sendEvent:event payload:payloadTmp];
 
-        NSString* resp = [@"OK SEND TRIAL EVENT >>> " stringByAppendingString:jsonArgs];
+        NSString* resp = [@"OK SENDING TRIAL EVENT... >>> " stringByAppendingString:jsonArgs];
         callback(@[[NSNull null], resp]);
     }
     @catch (NSException * e) {
-        callback(@[@"ERROR SEND TRIAL EVENT", [NSNull null] ]);
+        callback(@[@"ERROR SENDING TRIAL EVENT", [NSNull null] ]);
     }
 
 }
@@ -109,7 +112,7 @@ RCT_EXPORT_METHOD(showApp:(RCTResponseSenderBlock)callback){
 
     @try {
         [[NSR sharedInstance] showApp];
-        callback(@[[NSNull null], @"OK SHOW LIST" ]);
+        callback(@[[NSNull null], @"Going to show a list of purchases..." ]);
     }
     @catch (NSException * e) {
         callback(@[@"ERROR SHOW LIST", [NSNull null] ]);
@@ -125,7 +128,7 @@ RCT_EXPORT_METHOD(appLogin:(RCTResponseSenderBlock)callback){
         [[NSR sharedInstance] loginExecuted:url];
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"login_url"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        callback(@[[NSNull null], @"OK LOGIN EXECUTED: %@",url ]);
+        callback(@[[NSNull null], @"OK LOGIN EXECUTED, GOING TO Show Payment Process...: %@",url ]);
     }else
         callback(@[@"ERROR LOGIN EXECUTED", [NSNull null] ]);
 
@@ -143,7 +146,7 @@ RCT_EXPORT_METHOD(appPayment:(RCTResponseSenderBlock)callback){
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"payment_url"];
         [[NSUserDefaults standardUserDefaults] synchronize];
 
-        callback(@[[NSNull null], @"OK PAYMENT EXECUTED: %@",url]);
+        callback(@[[NSNull null], @"OK PAYMENT EXECUTED, GOING TO SHOW PAYMENT CONFIRMATION...: %@",url]);
     }else
         callback(@[@"ERROR PAYMENT EXECUTED", [NSNull null] ]);
 
@@ -181,5 +184,54 @@ RCT_EXPORT_METHOD(closeView:(RCTResponseSenderBlock)callback){
     
 }
 
+
+- (NSArray<NSString *> *)supportedEvents
+{
+  return @[@"EventReminder"];
+}
+
+
+- (void)startObserving
+{
+  [[NSNotificationCenter defaultCenter] addObserver:self
+                                           selector:@selector(nsrEventReminderReceived:)
+                                               name:@"EventEmitted"
+                                             object:nil];
+}
+
+- (void)stopObserving
+{
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+
+
+- (void)nsrEventReminderReceived:(NSNotification *)notification{
+    NSString *eventName = notification.userInfo[@"name"];
+    NSString *url = notification.userInfo[@"url"];
+    NSDictionary *payload = notification.userInfo[@"payload"];
+    
+    NSMutableDictionary *bodyTmp = [[NSMutableDictionary alloc] init];
+    
+    if(eventName != nil)
+        [bodyTmp setObject:eventName forKey:@"name"];
+    
+    if(url != nil)
+        [bodyTmp setObject:url forKey:@"url"];
+
+    if(payload != nil)
+        [bodyTmp setObject:payload forKey:@"payload"];
+    
+    
+    [self sendEventWithName:@"EventReminder" body:bodyTmp];
+    
+}
+
++ (void)emitEventWithName:(NSNotification *)notification
+{
+    //NSString *eventName = notification.userInfo[@"name"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EventEmitted" object:notification.object userInfo:notification.userInfo];
+}
 
 @end

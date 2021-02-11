@@ -4,6 +4,7 @@
 #import "NSRControllerWebView.h"
 #import "NSREventWebView.h"
 #import "Reachability.h"
+#import "RNReactNativeIosLibraryNsr.h"
 
 @implementation NSR
 
@@ -15,7 +16,7 @@ static BOOL _logDisabled = NO;
 }
 
 -(NSString*)version {
-	return @"3.0.4";
+	return @"3.0.5";
 }
 
 -(NSString*)os {
@@ -559,9 +560,18 @@ static BOOL _logDisabled = NO;
 			[self.securityDelegate secureRequest:@"register" payload:requestPayload headers:headers completionHandler:^(NSDictionary *responseObject, NSError *error) {
 				if (error != nil) {
 					NSRLog(@"sendUser %@", error);
-				}
+                    NSNotification *notification = [NSNotification notificationWithName:@"NSRRegisteredUser" object:@"nsr object" userInfo:@{@"name": @"NSRRegisteredUser", @"payload": error}];
+                    [RNReactNativeIosLibraryNsr emitEventWithName: notification];
+                }else{
+                    NSNotification *notification = [NSNotification notificationWithName:@"NSRRegisteredUser" object:@"nsr object" userInfo:@{@"name": @"NSRRegisteredUser", @"payload": responseObject}];
+                    [RNReactNativeIosLibraryNsr emitEventWithName: notification];
+                }
 			}];
-		}
+        }else if(authorized){
+            NSRLog(@"User already registered and authorized!");
+            NSNotification *notification = [NSNotification notificationWithName:@"NSRRegisteredUser" object:@"nsr object" userInfo:@{@"name": @"NSRRegisteredUser", @"payload": [user toDict:YES]}];
+            [RNReactNativeIosLibraryNsr emitEventWithName: notification];
+        }
 	}];
 }
 
